@@ -17,7 +17,7 @@ class _GetLikeCommentPageState extends State<GetLikeCommentPage> {
   TextEditingController controllerGetInsta = TextEditingController();
   String ifOk;
   Future<SharedPreferences> prefs = SharedPreferences.getInstance();
-  
+  final _keyForm = GlobalKey<FormState>();
   @override
   void initState() {
     super.initState();
@@ -91,6 +91,7 @@ class _GetLikeCommentPageState extends State<GetLikeCommentPage> {
                     SizedBox(height: 30),
                     Observer(builder: (context) {
                       return Form(
+                        key: _keyForm,
                         child: Column(
                           children: <Widget>[
                             InputsFollows(
@@ -140,14 +141,19 @@ class _GetLikeCommentPageState extends State<GetLikeCommentPage> {
                                   horizontal: 0, vertical: 18),
                       color: Colors.lightBlue[400],
                       onPressed: () async {
-                        ifOk = await Modular.get<GetInstaController>()
-                            .getFollow(
-                                controllerUsername.text,
-                                controllerPassword.text,
-                                controllerGetInsta.text,
-                                setProccess: 'Processando');
-                        return Modular.get<GetInstaController>()
-                            .setIfProccess(ifOk);
+                        if (_keyForm.currentState.validate()) {
+                          ifOk = await Modular.get<GetInstaController>()
+                              .getFollow(
+                                  controllerUsername.text,
+                                  controllerPassword.text,
+                                  controllerGetInsta.text,
+                                  setProccess: 'Processando');
+                          return Modular.get<GetInstaController>()
+                              .setIfProccess(ifOk);
+                        }
+                        else{
+                          return null;
+                        }
                       },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(

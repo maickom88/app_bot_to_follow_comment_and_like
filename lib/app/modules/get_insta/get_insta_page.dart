@@ -23,6 +23,8 @@ String ifOk;
 Future<SharedPreferences> prefs = SharedPreferences.getInstance();
 
 class _GetInstaPageState extends State<GetInstaPage> {
+
+  final _formKey = GlobalKey<FormState>();
   @override
   void initState() {
     super.initState();
@@ -97,6 +99,7 @@ class _GetInstaPageState extends State<GetInstaPage> {
                     ),
                     Observer(builder: (context) {
                       return Form(
+                        key: _formKey,
                         child: Column(
                           children: <Widget>[
                             InputsFollows(
@@ -183,8 +186,17 @@ class _GetInstaPageState extends State<GetInstaPage> {
                                 SizedBox(width: 10),
                                 Container(
                                   width: 80,
-                                  child: TextField(
+                                  child: TextFormField(
                                     controller: controllerLimit,
+                                    validator: (value){
+                                      if(value.isEmpty){
+                                        return "Enter a number!";
+                                      }
+                                      else {
+                                        return null;
+                                      }
+                                    },
+                                    maxLengthEnforced: true,
                                     keyboardType: TextInputType.number,
                                     style: GoogleFonts.openSans(
                                       fontSize: 18,
@@ -219,72 +231,7 @@ class _GetInstaPageState extends State<GetInstaPage> {
                                 ),
                               ],
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(
-                                    "Enable like",
-                                    style: GoogleFonts.openSans(
-                                      fontSize: 27,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w800,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Modular.get<GetInstaController>()
-                                          .buttonCheckMode(
-                                        !Modular.get<GetInstaController>()
-                                            .buttonCheckedLike,
-                                      );
-                                    },
-                                    child: Stack(
-                                      alignment:
-                                          Modular.get<GetInstaController>()
-                                                  .buttonCheckedLike
-                                              ? Alignment.centerRight
-                                              : Alignment.centerLeft,
-                                      children: <Widget>[
-                                        AnimatedContainer(
-                                          duration: Duration(milliseconds: 300),
-                                          width: 70,
-                                          height: 25,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                            color: Modular.get<
-                                                        GetInstaController>()
-                                                    .buttonCheckedLike
-                                                ? Colors.white
-                                                : Colors.grey,
-                                          ),
-                                        ),
-                                        AnimatedContainer(
-                                          curve: Curves.linear,
-                                          duration: Duration(milliseconds: 300),
-                                          width: 34,
-                                          height: 34,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(100),
-                                            color: Modular.get<
-                                                        GetInstaController>()
-                                                    .buttonCheckedLike
-                                                ? Colors.indigo[700]
-                                                : Colors.grey[400],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
+                            
                           ],
                         ),
                       );
@@ -310,7 +257,8 @@ class _GetInstaPageState extends State<GetInstaPage> {
                                   horizontal: 0, vertical: 18),
                       color: Colors.lightBlue[400],
                       onPressed: () async {
-                        ifOk = await Modular.get<GetInstaController>()
+                        if(_formKey.currentState.validate()){
+                          ifOk = await Modular.get<GetInstaController>()
                             .getLikeComment(
                                 controllerUsername.text,
                                 controllerPassword.text,
@@ -318,8 +266,13 @@ class _GetInstaPageState extends State<GetInstaPage> {
                                 controllerComment.text,
                                 controllerLimit.text,
                                 setProccess: 'Processando');
-                        return Modular.get<GetInstaController>()
+                          return Modular.get<GetInstaController>()
                             .setIfProccess(ifOk);
+                        }
+                        else{
+                          return null;
+                        }
+                        
                       },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(

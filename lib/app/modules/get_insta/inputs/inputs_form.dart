@@ -19,7 +19,15 @@ class InputsFollows extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 10, top: 3, right: 60),
-      child: TextField(
+      child: TextFormField(
+        validator: (value){
+          if(value.isEmpty){
+            return "Data is mandatory!";
+          }
+          else{
+            return null;
+          }
+        },
         controller: controllerInputs,
         obscureText: ifObscure ? true : false,
         style: GoogleFonts.openSans(

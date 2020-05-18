@@ -1,7 +1,7 @@
 class UrlsBase {
   static String urlGetFollows(
       String username, String password, String getInsta) {
-    return 'https://api-online.herokuapp.com/instaBot2?name=$username&password=$password&userinsta=$getInsta';
+    return 'Only url in the full version! download the app!';
   }
 
   static String urlLikeAndComment(String username, String password,
