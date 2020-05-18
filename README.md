@@ -1,7 +1,7 @@
 Flutter InstaBot
 =======================
 
-Instagram automation app. With two robots.
+Instagram automation application. With two robots, aiming to generate more engagement, credibility and reach!
 
 - 1: The first is responsible for following en masse. From a user it scans and follows.
 
