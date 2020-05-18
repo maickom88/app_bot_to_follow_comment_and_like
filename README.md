@@ -7,7 +7,7 @@ Instagram automation app. With two robots.
 
 - 2: The second comments and likes photos from a user's feed that you specify. It is possible to limit the number of photos to be commented and it is also possible to enable like and disable!
 
-![](https://github.com/maickom88/app_bot_to_follow_comment_and_like/blob/master/screenshots/behance-corona-virus.jpg?raw=true)
+![](https://github.com/maickom88/app_bot_to_follow_comment_and_like/blob/master/screenshots/instabot_behance.jpg?raw=true)
 
 #### ❗️ Attention ❗️
 
