@@ -1,16 +1,34 @@
-# insta_bot
+Flutter InstaBot
+=======================
 
-A new Flutter project.
+Instagram automation app. With two robots.
 
-## Getting Started
+- 1: The first is responsible for following en masse. From a user it scans and follows.
 
-This project is a starting point for a Flutter application.
+- 2: The second comments and likes photos from a user's feed that you specify. It is possible to limit the number of photos to be commented and it is also possible to enable like and disable!
 
-A few resources to get you started if this is your first Flutter project:
+![](https://github.com/maickom88/app_bot_to_follow_comment_and_like/blob/master/screenshots/behance-corona-virus.jpg?raw=true)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+#### ❗️ Attention ❗️
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Every system was made with a standard limit where it is not advisable to change. Use the limit app.
+
+#### ❔ Common questions ❔
+
+##### Will I be blocked?
+ - You will not be blocked, because by default the system comes with a limit on requests, but use sparingly.
+##### What will happen to my Instagram if I use the robot several times?
+  - At most, Instagram will slow down your events like commenting and following people on request, or blocking this action for a few minutes, but nothing to delete your account or block completely!
+##### How can I access the API?
+  - The repository is only possible to access an API, that is, you will only be able to use the comment and like bot. However it is possible to buy the full version of the app, where you have both functions ready!
+##### How does it feel to use the robots?
+  - Making such processes with the application is possible to generate engagement on the platform, that is, you will be more publicized, Instagram will see that your profile is authentic and daily you use and share the platform. Besides you disseminate by automatic means!
+ 
+
+
+## ✔️ See one of the robots
+This robot is responsible for mass curitr from a user that you specify
+
+![](https://media2.giphy.com/media/IhOpaiekLo1GfltGyH/giphy.gif)
+
+=======================
