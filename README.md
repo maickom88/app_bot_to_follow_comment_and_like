@@ -30,5 +30,10 @@ Every system was made with a standard limit where it is not advisable to change.
 This robot is responsible for mass curitr from a user that you specify
 
 ![](https://media2.giphy.com/media/IhOpaiekLo1GfltGyH/giphy.gif)
+==========
 
-=======================
+##### Help me by buying the app with all the features!
+Buy [click here!](https://produto.mercadolivre.com.br/MLB-1527461867-aplicativo-instagrambot-_JM?quantity=1#position=1&type=item&tracking_id=05d5ef3e-7b40-4013-8e46-70f8f71e4e18)
+##### Or contribute to my independent work by donating through the link below!
+[![Paypal Donation](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=maickomtutos%40gmail.com&currency_code=BRL&source=url)
+
